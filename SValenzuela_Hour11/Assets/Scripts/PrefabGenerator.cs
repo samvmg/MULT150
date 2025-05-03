@@ -2,13 +2,24 @@ using UnityEngine;
 
 public class PrefabGenerator : MonoBehaviour
 {
+
+    public GameObject prefab;
+
+    public int count = 10;
+
+    public float spacing = 2f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 position = new Vector3(i * spacing, 0, 0);
+            Instantiate(prefab, position, Quaternion.identity);
+        }
+    
 
-    public GameObject prefab;
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,3 +39,5 @@ public class PrefabGenerator : MonoBehaviour
         }
     }
 }
+
+
